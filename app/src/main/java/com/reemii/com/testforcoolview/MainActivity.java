@@ -1,5 +1,6 @@
 package com.reemii.com.testforcoolview;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         mWriteView = (WriteView) findViewById(R.id.write_view);
         TextView tvSave = (TextView) findViewById(R.id.tv_save);
         TextView tvClear = (TextView) findViewById(R.id.tv_clear);
+        TextView tvJump = (TextView) findViewById(R.id.tv_jump);
 
         tvSave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,5 +37,15 @@ public class MainActivity extends AppCompatActivity {
                 mWriteView.clear();
             }
         });
+
+        tvJump.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mIntent = new Intent(MainActivity.this,MainActivity1.class);
+                startActivity(mIntent);
+            }
+        });
+
+
     }
 }
