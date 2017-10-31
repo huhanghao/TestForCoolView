@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,76 +7,89 @@
     android:orientation="vertical"
     tools:context="com.reemii.com.testforcoolview.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.reemii.com.testforcoolview.View.SwitchBar
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"/>
-
-    <com.reemii.com.testforcoolview.View.ProgressButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:content_text="签到"
-        app:circle_color="#00c5c5"
-        android:id="@+id/imitateKeepButton"
-        app:content_text_size="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:radius="80dp"
-        app:ring_bg_color="#afe1e1"
-        app:ring_color="#00c5c5"
-        app:narrow_down="10dp"
-        app:ring_size="10dp"
-        app:space="1dp" />
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tv_save"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="点击保存"
-            android:padding="10dp"/>
 
-        <TextView
-            android:id="@+id/tv_clear"
-            android:layout_width="0dp"
+        <com.reemii.com.testforcoolview.View.SwitchBar
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="点击清除"
-            android:padding="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"/>
+
+        <com.reemii.com.testforcoolview.View.ProgressButton
+            android:id="@+id/imitateKeepButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:circle_color="#00c5c5"
+            app:content_text="签到"
+            app:content_text_size="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:narrow_down="10dp"
+            app:radius="80dp"
+            app:ring_bg_color="#afe1e1"
+            app:ring_color="#00c5c5"
+            app:ring_size="10dp"
+            app:space="1dp"
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_save"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:text="点击保存"
+                android:gravity="center"
+                android:background="@color/lightskyblue"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:id="@+id/tv_clear"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:text="点击清除"
+                android:gravity="center"
+                android:background="@color/powderblue"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+
+        <com.reemii.com.testforcoolview.View.WriteView
+            android:id="@+id/write_view"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/blanchedalmond"/>
+
+
+
 
     </LinearLayout>
-    
-    <com.reemii.com.testforcoolview.View.WriteView
-        android:id="@+id/write_view"
-        android:layout_width="match_parent"
-        android:layout_height="100dp" />
 
     <TextView
         android:id="@+id/tv_jump"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="跳转到下一个界面"
         android:background="@color/colorAccent"
         android:gravity="center"
-        android:padding="10dp"/>
+        android:padding="10dp"
+        android:text="跳转到树形结构界面"
+        android:textColor="@color/white"
+        android:layout_alignParentBottom="true"/>
 
 
-
-
-</LinearLayout>
+</RelativeLayout>
