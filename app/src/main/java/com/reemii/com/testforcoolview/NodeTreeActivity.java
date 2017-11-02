@@ -1,7 +1,9 @@
 package com.reemii.com.testforcoolview;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ListView;
 
 import com.reemii.com.testforcoolview.nodetree.Dept;
@@ -13,7 +15,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class MainActivity1 extends AppCompatActivity {
+public class NodeTreeActivity extends AppCompatActivity {
 
     private ListView mListView;
     private NodeTreeAdapter mAdapter;
@@ -25,6 +27,14 @@ public class MainActivity1 extends AppCompatActivity {
         setContentView(R.layout.activity_main_1);
 
         mListView = (ListView)findViewById(R.id.id_tree);
+        View mView = findViewById(R.id.tv_jump);
+        mView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(NodeTreeActivity.this, SimoLikeActivity.class);
+                startActivity(intent);
+            }
+        });
 
         mAdapter = new NodeTreeAdapter(this,mListView,mLinkedList);
         mListView.setAdapter(mAdapter);

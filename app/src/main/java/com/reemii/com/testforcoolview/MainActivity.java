@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         tvJump.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent mIntent = new Intent(MainActivity.this,MainActivity1.class);
+                Intent mIntent = new Intent(MainActivity.this,NodeTreeActivity.class);
                 startActivity(mIntent);
             }
         });

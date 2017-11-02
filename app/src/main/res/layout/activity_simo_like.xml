@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+
+    <com.reemii.com.testforcoolview.View.SimoLikeView
+        android:id="@+id/simon_like_view"
+        android:layout_width="60dp"
+        android:layout_height="120dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:simo_color_like="@color/gold"
+        app:simo_like_text="喜欢"
+        app:simo_data_text="80%"
+        android:layout_marginBottom="10dp"/>
+</RelativeLayout>

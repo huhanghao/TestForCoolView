@@ -11,5 +11,12 @@
         <attr name="radius" format="dimension" />
         <attr name="space" format="dimension" />
         <attr name="narrow_down" format="dimension" />
+        <attr name="tick_color" format="color|reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="SimoLikeView">
+        <attr name="simo_color_like" format="color|reference"/>
+        <attr name="simo_like_text" format="string"/>
+        <attr name="simo_data_text" format="string"/>
     </declare-styleable>
 </resources>
