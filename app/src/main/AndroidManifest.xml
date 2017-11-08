@@ -22,7 +22,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".NodeTreeActivity" />
-        <activity android:name=".SimoLikeActivity"></activity>
+        <activity android:name=".SimoLikeActivity" />
+        <activity android:name=".TestActivity" />
+        <activity android:name=".MeasureActivity"></activity>
     </application>
 
 </manifest>

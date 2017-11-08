@@ -14,7 +14,6 @@ import android.graphics.Region;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.BounceInterpolator;
@@ -26,6 +25,7 @@ import com.reemii.com.testforcoolview.util.ColorUtils;
 import java.util.ArrayList;
 
 /**
+ * 参考：http://blog.csdn.net/Simon_Crystin/article/details/78332452
  * Created by huhanghao on 2017/11/1.
  */
 
@@ -122,9 +122,7 @@ public class SimoLikeView extends View {
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
                 int mPos = (int) valueAnimator.getAnimatedValue();
                 currentGit = gitList.get(mPos);
-                Log.d("hhh", "pos = " + pos + ";gitList.size() = " + gitList.size());
                 if (mPos == (gitList.size() - 1)) {
-                    Log.d("hhh", "gitAnimator finish");
                     currentStatu = SimoStatus.node;
                     gitAnimator.removeAllUpdateListeners();
                     nodeAnimator.start();
@@ -231,7 +229,6 @@ public class SimoLikeView extends View {
         simoTextPaint.setTextSize(40);
         textSize = simoTextPaint.getTextSize();
 
-
     }
 
     @Override
@@ -274,12 +271,13 @@ public class SimoLikeView extends View {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN: {
                 if (currentStatu == SimoStatus.none) {
-                    currentStatu = SimoStatus.grow;
+
                     int x = (int) event.getX();
                     int y = (int) event.getY();
 
                     Region region = new Region(0, (int) (getHeight() - centerX), (int) getWidth(), (int) getHeight());
                     if (region.contains(x, y)) {
+                        currentStatu = SimoStatus.grow;
                         growAnimator.start();
                     }
                 }

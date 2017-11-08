@@ -46,6 +46,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        mProgressButton.setOnFinsishedListener(new ProgressButton.OnFinsishedListener() {
+            @Override
+            public void onfinished() {
+                Intent mIntent = new Intent(MainActivity.this,TestActivity.class);
+                startActivity(mIntent);
+            }
+        });
+
 
     }
 }

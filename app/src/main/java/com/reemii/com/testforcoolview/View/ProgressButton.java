@@ -51,6 +51,16 @@ public class ProgressButton extends View {
     private ValueAnimator animatorValue;
     private OnViewClick onViewClick;
     private Context mContext;
+    private OnFinsishedListener mOnFinsishedListener;
+
+    public interface OnFinsishedListener{
+        void onfinished();
+    }
+
+    public void setOnFinsishedListener(OnFinsishedListener onFinsishedListener){
+        this.mOnFinsishedListener = onFinsishedListener;
+    }
+
 
     public ProgressButton(Context context) {
         this(context, null);
@@ -206,7 +216,7 @@ public class ProgressButton extends View {
 
                 animatorValue.start();
                 angleAnimator = ValueAnimator.ofFloat(0, 360f);
-                angleAnimator.setDuration(2000);
+                angleAnimator.setDuration(1000);
                 angleAnimator.setInterpolator(new LinearInterpolator());
                 angleAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
                     @Override
@@ -214,8 +224,9 @@ public class ProgressButton extends View {
                         angle = (float) valueAnimator.getAnimatedValue();
                         if (angle == 360) {
                             angleAnimator.removeAllUpdateListeners();
-//                            onViewClick.onFinish(this);
-
+                            if(mOnFinsishedListener != null){
+                                mOnFinsishedListener.onfinished();
+                            }
                         }
                         postInvalidate();
                     }
@@ -227,10 +238,14 @@ public class ProgressButton extends View {
             case MotionEvent.ACTION_UP: {
                 restoreShape();
             }
+            default:{
+
+            }
             startDrawLine = false;
             return  false;
+
         }
-        return true;
+//        return true;
     }
 
     private void restoreShape() {
